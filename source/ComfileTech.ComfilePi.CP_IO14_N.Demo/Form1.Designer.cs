@@ -296,7 +296,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(187, 328);
+            label4.Location = new System.Drawing.Point(193, 328);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(408, 20);
             label4.TabIndex = 28;
@@ -307,7 +307,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label3.ForeColor = System.Drawing.Color.White;
-            label3.Location = new System.Drawing.Point(239, 297);
+            label3.Location = new System.Drawing.Point(223, 297);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(346, 31);
             label3.TabIndex = 27;
@@ -329,7 +329,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             // 
             _i2cButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             _i2cButton.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _i2cButton.Location = new System.Drawing.Point(432, 356);
+            _i2cButton.Location = new System.Drawing.Point(433, 356);
             _i2cButton.Name = "_i2cButton";
             _i2cButton.Size = new System.Drawing.Size(134, 35);
             _i2cButton.TabIndex = 30;
@@ -350,7 +350,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             // _i2cResult
             // 
             _i2cResult.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _i2cResult.Location = new System.Drawing.Point(397, 394);
+            _i2cResult.Location = new System.Drawing.Point(398, 394);
             _i2cResult.Name = "_i2cResult";
             _i2cResult.Size = new System.Drawing.Size(204, 20);
             _i2cResult.TabIndex = 32;
