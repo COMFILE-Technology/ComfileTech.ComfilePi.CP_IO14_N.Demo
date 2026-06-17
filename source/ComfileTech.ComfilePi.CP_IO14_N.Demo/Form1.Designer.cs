@@ -300,7 +300,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(408, 20);
             label4.TabIndex = 28;
-            label4.Text = "Connect Serial2 RX to TX.      I2C tests MCP23017 0x20.";
+            label4.Text = "Connect Serial3 RX to TX.      I2C tests MCP23017 0x20.";
             // 
             // label3
             // 
@@ -321,7 +321,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             _serial2Button.Name = "_serial2Button";
             _serial2Button.Size = new System.Drawing.Size(134, 35);
             _serial2Button.TabIndex = 29;
-            _serial2Button.Text = "Test Serial2";
+            _serial2Button.Text = "Test Serial3";
             _serial2Button.UseVisualStyleBackColor = true;
             _serial2Button.Click += _serial2Button_Click;
             // 

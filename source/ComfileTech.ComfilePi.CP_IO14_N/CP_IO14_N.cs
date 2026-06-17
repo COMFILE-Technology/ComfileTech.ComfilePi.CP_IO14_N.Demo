@@ -50,7 +50,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N
             // Create the serial port
             {
                 var list = new List<SerialPort>();
-                list.Add(new SerialPort("/dev/serial2"));
+                list.Add(new SerialPort("/dev/serial3"));
                 SerialPorts = list.AsReadOnly();
             }
         }
