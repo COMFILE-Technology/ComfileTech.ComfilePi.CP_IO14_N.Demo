@@ -127,12 +127,12 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             };
 
             var parities = new List<Parity>();
-            parities.AddRange(new Parity[]
-            {
+            parities.AddRange(
+            [
                 Parity.None,
                 Parity.Odd,
                 Parity.Even
-            });
+            ]);
 
             lock (port)
             {
@@ -291,16 +291,16 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
 
         private async void _serial2Button_Click(object sender, EventArgs e)
         {
-            _serial2Button.Enabled = false;
+            _serialButton.Enabled = false;
             try
             {
-                await SerialTestAsync(CP_IO14_N.Instance.SerialPorts[0], _serial2Result);
+                await SerialTestAsync(CP_IO14_N.Instance.SerialPorts[0], _serialResult);
             }
             finally
             {
                 if (!IsDisposed)
                 {
-                    _serial2Button.Enabled = true;
+                    _serialButton.Enabled = true;
                 }
             }
         }

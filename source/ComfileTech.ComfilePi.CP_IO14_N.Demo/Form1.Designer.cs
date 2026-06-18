@@ -50,9 +50,9 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             _closeButton = new System.Windows.Forms.Button();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            _serial2Button = new System.Windows.Forms.Button();
+            _serialButton = new System.Windows.Forms.Button();
             _i2cButton = new System.Windows.Forms.Button();
-            _serial2Result = new System.Windows.Forms.Label();
+            _serialResult = new System.Windows.Forms.Label();
             _i2cResult = new System.Windows.Forms.Label();
             _digitalOutputPanel.SuspendLayout();
             _digitalInputPanel.SuspendLayout();
@@ -313,17 +313,17 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label3.TabIndex = 27;
             label3.Text = "COMMUNICATION TESTS";
             // 
-            // _serial2Button
+            // _serialButton
             // 
-            _serial2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            _serial2Button.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _serial2Button.Location = new System.Drawing.Point(222, 356);
-            _serial2Button.Name = "_serial2Button";
-            _serial2Button.Size = new System.Drawing.Size(134, 35);
-            _serial2Button.TabIndex = 29;
-            _serial2Button.Text = "Test Serial3";
-            _serial2Button.UseVisualStyleBackColor = true;
-            _serial2Button.Click += _serial2Button_Click;
+            _serialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            _serialButton.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
+            _serialButton.Location = new System.Drawing.Point(222, 356);
+            _serialButton.Name = "_serialButton";
+            _serialButton.Size = new System.Drawing.Size(134, 35);
+            _serialButton.TabIndex = 29;
+            _serialButton.Text = "Test Serial3";
+            _serialButton.UseVisualStyleBackColor = true;
+            _serialButton.Click += _serial2Button_Click;
             // 
             // _i2cButton
             // 
@@ -337,15 +337,15 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             _i2cButton.UseVisualStyleBackColor = true;
             _i2cButton.Click += _i2cButton_Click;
             // 
-            // _serial2Result
+            // _serialResult
             // 
-            _serial2Result.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _serial2Result.Location = new System.Drawing.Point(187, 394);
-            _serial2Result.Name = "_serial2Result";
-            _serial2Result.Size = new System.Drawing.Size(204, 20);
-            _serial2Result.TabIndex = 31;
-            _serial2Result.Text = "PASS";
-            _serial2Result.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            _serialResult.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
+            _serialResult.Location = new System.Drawing.Point(187, 394);
+            _serialResult.Name = "_serialResult";
+            _serialResult.Size = new System.Drawing.Size(204, 20);
+            _serialResult.TabIndex = 31;
+            _serialResult.Text = "PASS";
+            _serialResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _i2cResult
             // 
@@ -363,9 +363,9 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             ClientSize = new System.Drawing.Size(800, 480);
             Controls.Add(_i2cResult);
-            Controls.Add(_serial2Result);
+            Controls.Add(_serialResult);
             Controls.Add(_i2cButton);
-            Controls.Add(_serial2Button);
+            Controls.Add(_serialButton);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(_closeButton);
@@ -411,9 +411,9 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
         private System.Windows.Forms.Button _closeButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button _serial2Button;
+        private System.Windows.Forms.Button _serialButton;
         private System.Windows.Forms.Button _i2cButton;
-        private System.Windows.Forms.Label _serial2Result;
+        private System.Windows.Forms.Label _serialResult;
         private System.Windows.Forms.Label _i2cResult;
     }
 }
