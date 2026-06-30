@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Device.I2c;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -190,64 +189,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             }
         }
 
-        async Task I2cTestAsync(Label label)
-        {
-            SetTesting(label, "Testing MCP23017");
-            var progress = new Progress<string>(text => SetTesting(label, text));
 
-            try
-            {
-                await Task.Run(() => RunI2cTest(progress));
-                SetPass(label);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                SetFail(label);
-            }
-        }
-
-        static void RunI2cTest(IProgress<string> progress)
-        {
-            var settings = new I2cConnectionSettings(
-                CP_IO14_N.Instance.I2cBusId,
-                CP_IO14_N.Instance.I2cSlaveAddress);
-
-            using var device = I2cDevice.Create(settings);
-
-            try
-            {
-                WriteI2cRegister(device, 0x00, 0x00); // IODIRA: all outputs
-                WriteI2cRegister(device, 0x01, 0x00); // IODIRB: all outputs
-                WriteI2cRegister(device, 0x14, 0x00); // OLATA
-                WriteI2cRegister(device, 0x15, 0x00); // OLATB
-
-                for (int output = 0; output < 16; output++)
-                {
-                    var expected = (ushort)(1 << output);
-
-                    progress.Report($"Testing output {output + 1}");
-
-                    WriteI2cRegister(device, 0x14, (byte)(expected & 0xFF));
-                    WriteI2cRegister(device, 0x15, (byte)(expected >> 8));
-                    Thread.Sleep(250);
-
-                    var actual = (ushort)(
-                        ReadI2cRegister(device, 0x12) |
-                        (ReadI2cRegister(device, 0x13) << 8));
-
-                    if (actual != expected)
-                    {
-                        throw new Exception($"Expected 0x{expected:X4}, read 0x{actual:X4}");
-                    }
-                }
-            }
-            finally
-            {
-                WriteI2cRegister(device, 0x14, 0x00);
-                WriteI2cRegister(device, 0x15, 0x00);
-            }
-        }
 
         static void SetTesting(Label label, string text)
         {
@@ -268,20 +210,6 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label.Text = "FAIL";
             label.ForeColor = Color.FromArgb(255, 128, 128);
             label.Update();
-        }
-
-        static void WriteI2cRegister(I2cDevice device, byte register, byte value)
-        {
-            Span<byte> buffer = stackalloc byte[] { register, value };
-            device.Write(buffer);
-        }
-
-        static byte ReadI2cRegister(I2cDevice device, byte register)
-        {
-            Span<byte> writeBuffer = stackalloc byte[] { register };
-            Span<byte> readBuffer = stackalloc byte[1];
-            device.WriteRead(writeBuffer, readBuffer);
-            return readBuffer[0];
         }
 
         private void _closeButton_Click(object sender, EventArgs e)
@@ -305,20 +233,6 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             }
         }
 
-        private async void _i2cButton_Click(object sender, EventArgs e)
-        {
-            _i2cButton.Enabled = false;
-            try
-            {
-                await I2cTestAsync(_i2cResult);
-            }
-            finally
-            {
-                if (!IsDisposed)
-                {
-                    _i2cButton.Enabled = true;
-                }
-            }
-        }
+
     }
 }

@@ -87,22 +87,6 @@ namespace ComfileTech.ComfilePi.CP_IO14_N
             get;
         }
 
-        /// <summary>
-        /// The Linux I2C bus number for the IO board.
-        /// </summary>
-        public int I2cBusId
-        {
-            get;
-        } = 1;
-
-        /// <summary>
-        /// The I2C slave address for the IO board.
-        /// </summary>
-        public int I2cSlaveAddress
-        {
-            get;
-        } = 0x20;
-
         static void ConfigureSerialPortPins()
         {
             if (!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))

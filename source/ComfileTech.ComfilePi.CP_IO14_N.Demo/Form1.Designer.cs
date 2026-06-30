@@ -51,9 +51,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             _serialButton = new System.Windows.Forms.Button();
-            _i2cButton = new System.Windows.Forms.Button();
             _serialResult = new System.Windows.Forms.Label();
-            _i2cResult = new System.Windows.Forms.Label();
             _digitalOutputPanel.SuspendLayout();
             _digitalInputPanel.SuspendLayout();
             SuspendLayout();
@@ -296,11 +294,11 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(193, 328);
+            label4.Location = new System.Drawing.Point(303, 328);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(408, 20);
+            label4.Size = new System.Drawing.Size(195, 20);
             label4.TabIndex = 28;
-            label4.Text = "Connect Serial3 RX to TX.      I2C tests MCP23017 0x20.";
+            label4.Text = "Connect Serial3 RX to TX.";
             // 
             // label3
             // 
@@ -317,7 +315,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             // 
             _serialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             _serialButton.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _serialButton.Location = new System.Drawing.Point(222, 356);
+            _serialButton.Location = new System.Drawing.Point(333, 356);
             _serialButton.Name = "_serialButton";
             _serialButton.Size = new System.Drawing.Size(134, 35);
             _serialButton.TabIndex = 29;
@@ -325,46 +323,22 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
             _serialButton.UseVisualStyleBackColor = true;
             _serialButton.Click += _serial2Button_Click;
             // 
-            // _i2cButton
-            // 
-            _i2cButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            _i2cButton.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _i2cButton.Location = new System.Drawing.Point(433, 356);
-            _i2cButton.Name = "_i2cButton";
-            _i2cButton.Size = new System.Drawing.Size(134, 35);
-            _i2cButton.TabIndex = 30;
-            _i2cButton.Text = "Test I2C";
-            _i2cButton.UseVisualStyleBackColor = true;
-            _i2cButton.Click += _i2cButton_Click;
-            // 
             // _serialResult
             // 
             _serialResult.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _serialResult.Location = new System.Drawing.Point(187, 394);
+            _serialResult.Location = new System.Drawing.Point(298, 394);
             _serialResult.Name = "_serialResult";
             _serialResult.Size = new System.Drawing.Size(204, 20);
             _serialResult.TabIndex = 31;
             _serialResult.Text = "PASS";
             _serialResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // _i2cResult
-            // 
-            _i2cResult.Font = new System.Drawing.Font("NanumGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 129);
-            _i2cResult.Location = new System.Drawing.Point(398, 394);
-            _i2cResult.Name = "_i2cResult";
-            _i2cResult.Size = new System.Drawing.Size(204, 20);
-            _i2cResult.TabIndex = 32;
-            _i2cResult.Text = "PASS";
-            _i2cResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Form1
             // 
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             ClientSize = new System.Drawing.Size(800, 480);
-            Controls.Add(_i2cResult);
             Controls.Add(_serialResult);
-            Controls.Add(_i2cButton);
             Controls.Add(_serialButton);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -412,9 +386,7 @@ namespace ComfileTech.ComfilePi.CP_IO14_N.Demo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button _serialButton;
-        private System.Windows.Forms.Button _i2cButton;
         private System.Windows.Forms.Label _serialResult;
-        private System.Windows.Forms.Label _i2cResult;
     }
 }
 
